@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://medicore-expediente-clinico-production.up.railway.app/api"
+  baseURL: "https://medicore-backend.up.railway.app/api"
 });
 
 axiosClient.interceptors.request.use((config) => {
