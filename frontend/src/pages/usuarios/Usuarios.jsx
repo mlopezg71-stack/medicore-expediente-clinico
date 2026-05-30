@@ -186,12 +186,14 @@ const Usuarios = () => {
         },
         sidebar: {
             width: "250px",
+            height: "100vh",
             background: "linear-gradient(180deg, #062b5f 0%, #031b3d 100%)",
             color: "#fff",
             padding: "25px 18px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            flexShrink: 0
         },
         logo: {
             textAlign: "center",
@@ -242,7 +244,9 @@ const Usuarios = () => {
         },
         main: {
             flex: 1,
-            padding: "25px 35px"
+            padding: "25px 35px",
+            height: "100vh",
+            overflowY: "auto"
         },
         navbar: {
             display: "flex",
@@ -321,7 +325,8 @@ const Usuarios = () => {
             padding: "22px",
             boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
             border: "1px solid #e8edf5",
-            overflowX: "auto"
+            overflowX: "auto",
+            marginBottom: "30px"
         },
         table: {
             width: "100%",
