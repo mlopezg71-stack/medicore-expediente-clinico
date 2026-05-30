@@ -1,0 +1,35 @@
+name: MediCore CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Instalar dependencias backend
+        working-directory: backend
+        run: npm install
+
+      - name: Instalar dependencias frontend
+        working-directory: frontend
+        run: npm install
+
+      - name: Compilar frontend
+        working-directory: frontend
+        run: npm run build
