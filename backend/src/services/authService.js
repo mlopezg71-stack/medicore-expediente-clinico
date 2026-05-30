@@ -33,16 +33,23 @@ export const registrarUsuario = async (data) => {
 export const loginUsuario = async (data) => {
   const { correo, password } = data;
 
+  console.log("CORREO RECIBIDO:", correo);
+  console.log("PASSWORD RECIBIDA:", password);
+
   const usuario = await prisma.usuario.findFirst({
     where: { correo },
     include: { rol: true },
   });
+
+  console.log("USUARIO ENCONTRADO:", usuario);
 
   if (!usuario) {
     throw new Error("Credenciales incorrectas");
   }
 
   const passwordValida = await bcrypt.compare(password, usuario.password_hash);
+
+  console.log("PASSWORD VALIDA:", passwordValida);
 
   if (!passwordValida) {
     throw new Error("Credenciales incorrectas");
