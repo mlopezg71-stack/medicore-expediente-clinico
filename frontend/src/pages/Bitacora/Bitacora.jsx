@@ -131,18 +131,21 @@ const Bitacora = () => {
     const styles = {
         layout: {
             display: "flex",
-            minHeight: "100vh",
+            height: "100vh",
+            overflow: "hidden",
             backgroundColor: "#f5f7fb",
             fontFamily: "'Segoe UI', sans-serif"
         },
         sidebar: {
             width: "250px",
+            height: "100vh",
+            flexShrink: 0,
             background: "linear-gradient(180deg, #062b5f 0%, #031b3d 100%)",
             color: "#fff",
             padding: "25px 18px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between"
+            justifyContent: "spacmaine-between"
         },
         logo: {
             textAlign: "center",
@@ -262,7 +265,8 @@ const Bitacora = () => {
             padding: "22px",
             boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
             border: "1px solid #e8edf5",
-            overflowX: "auto"
+            overflowX: "auto",
+            marginBottom: "30px"
         },
         table: {
             width: "100%",
