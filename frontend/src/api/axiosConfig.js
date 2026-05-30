@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:3000/api"
+  baseURL: "https://medicore-backend.up.railway.app/api"
 });
-
 axiosClient.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 
